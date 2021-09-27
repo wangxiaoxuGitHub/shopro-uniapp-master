@@ -12,7 +12,8 @@
 <!--			<home-head v-if="headSwiperList && headSwiperList.length" :isScorll="isScorll" borderRadius="0" :navTitle="initShop.name" :list="headSwiperList"></home-head>-->
 			<!-- 自定义模块 -->
             <!-- 搜索框 -->
-            <my-search></my-search>
+          <my-search/>
+		  
             <!-- tab -->
             <view class="head_box">
                 <view class="order-nav u-flex">

@@ -1,9 +1,14 @@
 <!-- 个人信息 -->
 <template>
 	<view class="container">
+		<view class="user-list u-flex u-row-between">
+			<text class="list-name"></text>
+			<view class="u-flex" @tap="onChooseImg">
+			     <button class="u-reset-button save-btn " :class="{ 'dis-btn': editInfoDisabled }" :disabled="editInfoDisabled" @tap="editUserInfo">保存</button>
+			</view>
+		</view>
 		<view class="u-flex u-row-between u-p-x-30 info-head u-p-y-20">
-			<view class="info-title">基本信息111</view>
-			<button class="u-reset-button save-btn" :class="{ 'dis-btn': editInfoDisabled }" :disabled="editInfoDisabled" @tap="editUserInfo">保存</button>
+			<view class="info-title">我的账户</view>
 		</view>
 		<view class="user-list u-flex u-row-between">
 			<text class="list-name">头像</text>
@@ -28,13 +33,23 @@
 				<text class="u-iconfont uicon-arrow-right u-m-l-20" style="color:#999;"></text>
 			</view>
 		</view>
-		<view class="user-list  u-flex u-row-between u-m-b-10" @tap="showCalendar = true">
+			<view class="user-list u-flex u-row-between" @tap="bindMobile">
+			<text class="list-name">手机号</text>
+			<view class="u-flex">
+				<text class="list-val">{{ userInfo.mobile || '暂未绑定手机号' }}</text>
+				<text v-if="userInfo.id && !userInfo.verification.mobile" class="u-iconfont uicon-arrow-right u-m-l-20" style="color:#999;"></text>
+				<text v-else class="u-iconfont uicon-checkmark-circle-fill u-m-l-20" style="color:#09BB07;"></text>
+			</view>
+		</view>
+		<!-- <view class="user-list  u-flex u-row-between u-m-b-10" @tap="showCalendar = true">
 			<text class="list-name">生日</text>
 			<view class="u-flex">
 				<text class="list-val">{{ userData.birthday || '请选择生日~' }}</text>
 				<text class="u-iconfont uicon-arrow-right u-m-l-20" style="color:#999;"></text>
 			</view>
-		</view>
+		</view> -->
+
+	
 
 		<view class="user-list u-flex u-row-between" @tap="$Router.push('/pages/user/address/list')">
 			<text class="list-name">地址管理</text>
@@ -50,14 +65,14 @@
 				<text class="u-iconfont uicon-arrow-right u-m-l-20" style="color:#999;"></text>
 			</view>
 		</view>
-		<view class="user-list u-flex u-row-between" @tap="bindMobile">
-			<text class="list-name">手机号</text>
+		<view class="user-list u-flex u-row-between" @tap="$Router.push('/pages/user/cancellation/text')">
+			<text class="list-name">注销账号</text>
 			<view class="u-flex">
-				<text class="list-val">{{ userInfo.mobile || '暂未绑定手机号' }}</text>
-				<text v-if="userInfo.id && !userInfo.verification.mobile" class="u-iconfont uicon-arrow-right u-m-l-20" style="color:#999;"></text>
-				<text v-else class="u-iconfont uicon-checkmark-circle-fill u-m-l-20" style="color:#09BB07;"></text>
+				<text class="list-val"></text>
+				<text class="u-iconfont uicon-arrow-right u-m-l-20" style="color:#999;"></text>
 			</view>
 		</view>
+	
 
 		<!-- 第三方账号 -->
 		<view class="other-account" v-if="platform !== 'H5'">
@@ -181,6 +196,7 @@ export default {
 		changePwd() {
 			this.showAuthModal('changePwd');
 		},
+		
 		// 修改昵称
 		onChangeNickName() {
 			this.editInfoDisabled = this.userData.nickname == this.userInfo.nickname;
@@ -325,14 +341,8 @@ export default {
 
 <style lang="scss" scoped>
 // 基本信息
-.info-head {
-	.info-title {
-		line-height: 60rpx;
-		font-size: 28rpx;
-		font-weight: 600;
-		color: #333333;
-	}
-	.save-btn {
+.save-btn {
+		margin-left: 600rpx;
 		color: #fff;
 		background: linear-gradient(90deg, rgba(233, 180, 97, 1), rgba(238, 204, 137, 1));
 		width: 100rpx;
@@ -341,6 +351,14 @@ export default {
 		line-height: 60rpx;
 		font-size: 28rpx;
 	}
+.info-head {
+	.info-title {
+		line-height: 60rpx;
+		font-size: 28rpx;
+		font-weight: 600;
+		color: #333333;
+	}
+	
 	.dis-btn {
 		opacity: 0.5;
 	}

@@ -717,12 +717,12 @@
 			"pages": [{
 					"path": "info",
 					"style": {
-						"navigationBarTitleText": "个人信息"
+						"navigationBarTitleText": "设置"
 					},
 					"meta": {
 						"auth": true,
 						"async": true,
-						"title": "个人信息",
+						"title": "设置",
 						"group": "用户"
 					}
 				},
@@ -827,6 +827,19 @@
 						"auth": true,
 						"async": false,
 						"title": "修改地址",
+						"group": "用户"
+					}
+				},
+				{
+					"path": "/cancellation/text",
+					"style": {
+						"navigationBarTitleText": ""
+
+					},
+					"meta": {
+						"auth": true,
+						"async": false,
+						"title": "申请注销账号",
 						"group": "用户"
 					}
 				},
