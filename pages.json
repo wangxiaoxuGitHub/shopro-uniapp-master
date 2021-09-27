@@ -9,9 +9,8 @@
 			"aliasPath": "/", //对于h5端你必须在首页加上aliasPath并设置为/
 			"style": {
 				"navigationBarTitleText": "首页",
-				"navigationBarTextStyle": "white",
 				"enablePullDownRefresh": true,
-				"navigationStyle": "custom",
+
 				"mp-alipay": {
 					"transparentTitle": "always",
 					"titlePenetrate": "YES",
