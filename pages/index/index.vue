@@ -258,7 +258,7 @@ export default {
                     path_type: 1},
             ],
 
-            //
+            // 商品2数据
             goodList2:[
                 {
                     image: "https://demo.shopro.top/uploads/20210915/860ac615dc5fa2f41fa1f76352cefa07.png",

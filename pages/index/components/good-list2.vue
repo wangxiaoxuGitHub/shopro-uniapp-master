@@ -1,10 +1,12 @@
 <template>
-    <view class="adv-box u-m-y-10 u-m-x-20" v-for="item in advList">
-        <view class="img-box">
-            <image style="width:710rpx;height:220rpx;border-radius: 20rpx" @tap="jump(item.image)" :src="item.image" mode="aspectFill"></image>
-        </view>
-        <view class="info">{{item.title}}</view>
-    </view>
+   <view>
+       <view class="adv-box u-m-y-10 u-m-x-20" v-for="item in goodList2">
+           <view class="img-box">
+               <image style="width:710rpx;height:220rpx;border-radius: 20rpx" @tap="jump(item.image)" :src="item.image" mode="aspectFill"></image>
+           </view>
+           <view class="info">{{item.title}}</view>
+       </view>
+   </view>
 </template>
 
 <script>
@@ -16,7 +18,7 @@
         components: {},
         data() {
             return {
-                advList:this.goodList2
+                // advList:this.goodList2
             };
         },
         props: {
