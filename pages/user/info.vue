@@ -2,7 +2,7 @@
 <template>
 	<view class="container">
 		<view class="u-flex u-row-between u-p-x-30 info-head u-p-y-20">
-			<view class="info-title">基本信息</view>
+			<view class="info-title">基本信息111</view>
 			<button class="u-reset-button save-btn" :class="{ 'dis-btn': editInfoDisabled }" :disabled="editInfoDisabled" @tap="editUserInfo">保存</button>
 		</view>
 		<view class="user-list u-flex u-row-between">
